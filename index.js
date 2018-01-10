@@ -1,8 +1,6 @@
-const rootURL = "https://api.github.com"
-
 function getRepositories() {
   const name = document.getElementById("username").value
-  const uri = rootURL + "/users/" + name + "/repos"
+  const uri = "https://api.github.com/users/" + name + "/repos"
   const xhr = new XMLHttpRequest()
   xhr.addEventListener("load", displayRepositories)
   xhr.open("GET", uri)
@@ -27,7 +25,7 @@ function displayRepositories() {
 }
 function getCommits(el) {
   const repoName = el.dataset.repository
-  const uri = rootURL + "/repos/" + el.dataset.username + "/" + repoName + "/commits"
+  const uri = "https://api.github.com/repos/" + el.dataset.username + "/" + repoName + "/commits"
   const xhr = new XMLHttpRequest()
   xhr.addEventListener("load", displayCommits)
   xhr.open("GET", uri)
@@ -40,7 +38,7 @@ function displayCommits() {
 }
 function getBranches(el) {
   const repoName = el.dataset.repository
-  const uri = rootURL + "/repos/" + el.dataset.username + "/" + repoName + "/branches"
+  const uri = "https://api.github.com/repos/" + el.dataset.username + "/" + repoName + "/branches"
   const xhr = new XMLHttpRequest()
   xhr.addEventListener("load", displayBranches)
   xhr.open("GET", uri)

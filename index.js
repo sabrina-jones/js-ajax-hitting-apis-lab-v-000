@@ -35,7 +35,7 @@ function getCommits(el){
 
 }
 
-function getBranches(){
+function getBranches(el){
   const repoName = el.dataset.repository
   const uri = "https://api.github.com/repos/" + el.dataset.username + "/" + repoName + "/branches"
   const req = new XMLHttpRequest()
